@@ -55,13 +55,13 @@ def menu() -> None :
 
         match option:
             case "ccl":
-                createClient()
+                create_client()
             case "lcl":
-                listClients()
+                list_clients()
             case "cco":
-                createAccount()
+                create_account()
             case "lco":
-                listAccounts()
+                list_accounts()
             case "dep":
                 deposit()
             case "saq":
@@ -74,7 +74,7 @@ def menu() -> None :
             case _:
                 print("\nOpção inválida. Por favor digite uma das opções disponíveis no menu!\n")
 
-def createClient() -> None:
+def create_client() -> None:
     print(f"\nBank Python:\n\nInforme os dados solicitados do cliente:\n\n[{MENU[7].get('keyword')}] - Voltar ao menu anterior\n")
     
     global clients
@@ -128,7 +128,7 @@ def createClient() -> None:
 
     clients.append(client)
 
-def listClients() -> None :
+def list_clients() -> None :
     print(f"\nBank Python:\n\nClientes:\n")
 
     for client in clients:
@@ -138,7 +138,7 @@ def listClients() -> None :
             value = ",".join(value.values()) if isinstance(value, dict) else value
             print(f"{attribute['label']}: {value}")
 
-def createAccount() -> None:
+def create_account() -> None:
     print(f"\nBank Python:\n\nInforme os dados solicitados da conta bancária:\n\n[{MENU[7].get('keyword')}] - Voltar ao menu anterior\n")
 
     global accounts
@@ -211,7 +211,7 @@ def createAccount() -> None:
         print(f"\nBank Python:\n\nConta cadastrada e vinculada com sucesso [Cliente: {client['cpf']} | Agência: {newAccount['agency']} | Conta: {newAccount['account_number']}] registrado com sucesso!")
         break
 
-def listAccounts() -> None:
+def list_accounts() -> None:
     print(f"\nBank Python:\n\Contas:\n")
 
     for account in accounts:
